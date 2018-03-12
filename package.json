@@ -64,5 +64,12 @@
   "bugs": {
     "url": "https://github.com/ollelauribostrom/orghub-gateway/issues"
   },
-  "homepage": "https://github.com/ollelauribostrom/orghub-gateway#readme"
+  "homepage": "https://github.com/ollelauribostrom/orghub-gateway#readme",
+  "now": {
+    "name": "orghub-gateway",
+    "alias": "orghub-gateway.now.sh",
+    "dotenv": true,
+    "public": true,
+    "type": "docker"
+  }
 }
