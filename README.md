@@ -3,6 +3,20 @@ API-Gateway for all orghub services
 
 > Deployed @ https://orghub-gateway.now.sh
 
+Endpoints
+---------
+| Endpoint              | Method    | Service   |
+|:--------------------- |:----------|:----------|
+| /login                | GET       | Auth      |
+| /logout               | GET       | Auth      |
+| /status               | GET       | Auth      |
+| /unregister           | GET       | Auth      |
+| /feed                 | GET       | Feed      |
+| /feed/:org            | GET       | Feed      |
+| /stats/:org           | GET       | Stats     |
+| /notifications/:org   | GET, PUT, POST, DELETE   | Notifications      |
+| /payload              | POST      | Notifications      |
+
 
 Commands
 --------
@@ -18,8 +32,8 @@ Commands
 Docker Support
 ------
 ```sh
-docker build -t orghub/auth-service .
-docker run -p 8080:8080 orghub/auth-service
+docker build -t orghub/gateway .
+docker run -p 8080:8080 orghub/gateway
 ```
 
 Publish to now
