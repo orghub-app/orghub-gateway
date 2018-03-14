@@ -1,5 +1,7 @@
 # orghub/gateway
-_todo_
+API-Gateway for all orghub services
+
+> Deployed @ https://orghub-gateway.now.sh
 
 
 Commands
@@ -24,7 +26,7 @@ Publish to now
 --------------
 ```sh
 npm install now -g
-now --docker --public
+now && now alias
 # wait a bit..
 # visit url
 ```
