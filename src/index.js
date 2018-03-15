@@ -3,7 +3,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 import proxy from 'http-proxy-middleware';
 import config from './config';
-import { errorHandler, logger } from './middleware';
+import { logger } from './middleware';
 
 const app = express();
 
@@ -26,7 +26,6 @@ app.use('/stats', proxy({ target: config.statsServiceUrl, changeOrigin: true }))
 app.use('/notifications', proxy({ target: config.notificationServiceUrl, changeOrigin: true }));
 app.use('/payload', proxy({ target: config.notificationServiceUrl, changeOrigin: true }));
 
-app.use(errorHandler);
 app.listen(config.port, () => console.log(`server running at port ${config.port}`));
 
 export default app;

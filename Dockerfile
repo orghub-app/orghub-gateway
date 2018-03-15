@@ -6,6 +6,9 @@ LABEL authors="ollelauribostrom"
 COPY package.json /www/package.json
 RUN cd /www; npm install
 
+# Install pm2
+RUN npm install pm2 -g
+
 # Copy app source
 COPY . /www
 
@@ -21,4 +24,6 @@ ENV NODE_ENV production
 EXPOSE  8080
 
 # start command as per package.json
-CMD ["npm", "start"]
+RUN npm run build
+CMD ["pm2-runtime", "dist/index.js"]
+
